@@ -7,6 +7,11 @@ import { useState } from 'react';
 import { Calendar } from './ui/calendar';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { ScrollReveal, ParallaxScroll, ScaleOnScroll } from './ScrollReveal';
+import { ScrollVideoSection } from '@/components/animation/ScrollVideoSection';
+import { StickyImageStackSection } from '@/components/animation/StickyImageStackSection';
+import { useGSAPReducedMotion } from '@/components/animation/useGSAPReducedMotion';
+
+const VIDEO_SRC = '/videos/banner_video.mp4';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
@@ -14,6 +19,7 @@ interface HomePageProps {
 
 export function HomePage({ onNavigate }: HomePageProps) {
   const [date, setDate] = useState<Date | undefined>(new Date());
+  const reducedMotion = useGSAPReducedMotion();
 
   return (
     <div className="min-h-screen bg-black">
@@ -21,12 +27,18 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Video Background Effect */}
         <div className="absolute inset-0">
-          <ImageWithFallback
-            src="https://images.unsplash.com/photo-1745433921722-26dd28b318d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZW9wbGUlMjBsYXVnaGluZyUyMGNlbGVicmF0aW9ufGVufDF8fHx8MTc2MjI3OTQ5M3ww&ixlib=rb-4.1.0&q=80&w=1080"
-            alt="People celebrating"
+          <video
+            src={VIDEO_SRC}
             className="w-full h-full object-cover"
+            autoPlay={!reducedMotion}
+            muted
+            loop={!reducedMotion}
+            playsInline
+            preload="auto"
+            aria-hidden="true"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-black/90" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.18)_0%,rgba(0,0,0,0.42)_45%,rgba(0,0,0,0.8)_100%)]" />
         </div>
 
         {/* Floating Confetti */}
@@ -64,18 +76,18 @@ export function HomePage({ onNavigate }: HomePageProps) {
               <span className="text-white text-sm">Orlando-based · Fast quotes · Premium event experiences</span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl text-white mb-6 max-w-4xl mx-auto">
+            <h1 className="text-5xl md:text-7xl text-white mb-6 max-w-4xl mx-auto drop-shadow-2xl [text-shadow:_0_4px_32px_rgb(0_0_0_/_0.85)]">
               Orlando Photo Booth Rentals for{' '}
               <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Unforgettable Events
               </span>{' '}
             </h1>
 
-            <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto drop-shadow-xl [text-shadow:_0_2px_18px_rgb(0_0_0_/_0.85)]">
               Premium photo booth experiences for weddings, parties, corporate events, quinceañeras, and private celebrations across Orlando, Florida.
             </p>
 
-            <div className="flex flex-wrap items-center justify-center gap-3 mb-8 text-sm text-white/70">
+            <div className="flex flex-wrap items-center justify-center gap-3 mb-8 text-sm text-white/85">
               {['Orlando-based service', 'Fast quote response', 'Secure online payments', 'Custom event packages', 'Digital sharing included'].map((item) => (
                 <span key={item} className="rounded-full border border-white/15 bg-white/10 px-3 py-2 backdrop-blur-md">{item}</span>
               ))}
@@ -114,12 +126,12 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
       {/* Quick Booking Widget */}
       <section className="relative -mt-20 z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
-        <Card className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-3xl shadow-2xl">
+        <Card className="bg-white/[0.04] backdrop-blur-md border border-white/15 p-8 rounded-3xl shadow-2xl">
           <h3 className="text-2xl text-white mb-6 text-center">Quick Booking</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div>
               <label className="text-white/70 text-sm mb-2 block">Event Date</label>
-              <div className="bg-white/5 border border-white/10 rounded-xl p-3">
+              <div className="bg-white/[0.025] border border-white/[0.08] rounded-xl p-3">
                 <Calendar
                   mode="single"
                   selected={date}
@@ -131,7 +143,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             <div>
               <label className="text-white/70 text-sm mb-2 block">Event Type</label>
               <Select>
-                <SelectTrigger className="bg-white/5 border-white/10 text-white rounded-xl h-12">
+                <SelectTrigger className="bg-white/[0.025] border-white/[0.08] text-white rounded-xl h-12">
                   <SelectValue placeholder="Select event type" />
                 </SelectTrigger>
                 <SelectContent>
@@ -145,7 +157,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             <div>
               <label className="text-white/70 text-sm mb-2 block">Guest Count</label>
               <Select>
-                <SelectTrigger className="bg-white/5 border-white/10 text-white rounded-xl h-12">
+                <SelectTrigger className="bg-white/[0.025] border-white/[0.08] text-white rounded-xl h-12">
                   <SelectValue placeholder="Number of guests" />
                 </SelectTrigger>
                 <SelectContent>
@@ -166,6 +178,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </Card>
       </section>
 
+      <ScrollVideoSection onBookClick={() => onNavigate('booking')} />
+
       {/* Photo Booth Examples at Events */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
         <ScrollReveal direction="up">
@@ -182,7 +196,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           <ScrollReveal direction="left" delay={0.1}>
-            <Card className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden group hover:scale-105 transition-transform duration-300">
+            <Card className="bg-white/[0.025] backdrop-blur-[2px] border border-white/[0.08] rounded-3xl overflow-hidden group hover:scale-105 transition-transform duration-300">
               <div className="relative h-80 overflow-hidden">
                 <ParallaxScroll speed={0.3}>
                   <ImageWithFallback
@@ -204,7 +218,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </ScrollReveal>
 
           <ScrollReveal direction="up" delay={0.2}>
-            <Card className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden group hover:scale-105 transition-transform duration-300">
+            <Card className="bg-white/[0.025] backdrop-blur-[2px] border border-white/[0.08] rounded-3xl overflow-hidden group hover:scale-105 transition-transform duration-300">
               <div className="relative h-80 overflow-hidden">
                 <ParallaxScroll speed={0.3}>
                   <ImageWithFallback
@@ -226,7 +240,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </ScrollReveal>
 
           <ScrollReveal direction="right" delay={0.3}>
-            <Card className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden group hover:scale-105 transition-transform duration-300">
+            <Card className="bg-white/[0.025] backdrop-blur-[2px] border border-white/[0.08] rounded-3xl overflow-hidden group hover:scale-105 transition-transform duration-300">
               <div className="relative h-80 overflow-hidden">
                 <ParallaxScroll speed={0.3}>
                   <ImageWithFallback
@@ -248,7 +262,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </ScrollReveal>
 
           <ScrollReveal direction="left" delay={0.4}>
-            <Card className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden group hover:scale-105 transition-transform duration-300">
+            <Card className="bg-white/[0.025] backdrop-blur-[2px] border border-white/[0.08] rounded-3xl overflow-hidden group hover:scale-105 transition-transform duration-300">
               <div className="relative h-80 overflow-hidden">
                 <ParallaxScroll speed={0.3}>
                   <ImageWithFallback
@@ -270,7 +284,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </ScrollReveal>
 
           <ScrollReveal direction="up" delay={0.5}>
-            <Card className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden group hover:scale-105 transition-transform duration-300">
+            <Card className="bg-white/[0.025] backdrop-blur-[2px] border border-white/[0.08] rounded-3xl overflow-hidden group hover:scale-105 transition-transform duration-300">
               <div className="relative h-80 overflow-hidden">
                 <ParallaxScroll speed={0.3}>
                   <ImageWithFallback
@@ -292,7 +306,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </ScrollReveal>
 
           <ScrollReveal direction="right" delay={0.6}>
-            <Card className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden group hover:scale-105 transition-transform duration-300">
+            <Card className="bg-white/[0.025] backdrop-blur-[2px] border border-white/[0.08] rounded-3xl overflow-hidden group hover:scale-105 transition-transform duration-300">
               <div className="relative h-80 overflow-hidden">
                 <ParallaxScroll speed={0.3}>
                   <ImageWithFallback
@@ -319,7 +333,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             <Button
               onClick={() => onNavigate('gallery')}
               variant="outline"
-              className="border-2 border-purple-500 bg-white/5 hover:bg-purple-500 text-white px-8 py-6 rounded-full"
+              className="border-2 border-purple-500 bg-white/[0.03] hover:bg-purple-500 text-white px-8 py-6 rounded-full"
             >
               View Full Gallery
               <ChevronRight className="w-5 h-5 ml-2" />
@@ -365,7 +379,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               direction="up"
               delay={index * 0.15}
             >
-              <Card className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-all group relative overflow-hidden">
+              <Card className="bg-white/[0.025] backdrop-blur-[2px] border border-white/[0.08] p-8 rounded-3xl hover:bg-white/[0.06] transition-all group relative overflow-hidden">
                 {/* Glow effect */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity`} />
                 
@@ -388,13 +402,15 @@ export function HomePage({ onNavigate }: HomePageProps) {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {['The Alfond Inn', 'Luxmore Grande Estate', 'Ritz Carlton Orlando', 'Disney Wedding Pavilion'].map((client) => (
             <ScaleOnScroll key={client}>
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 flex items-center justify-center hover:bg-white/10 transition-all">
+              <div className="bg-white/[0.025] backdrop-blur-[2px] border border-white/[0.08] rounded-2xl p-6 flex items-center justify-center hover:bg-white/[0.06] transition-all">
                 <p className="text-white/70 text-center">{client}</p>
               </div>
             </ScaleOnScroll>
           ))}
         </div>
       </section>
+
+      <StickyImageStackSection onBookClick={() => onNavigate('booking')} />
 
       {/* CTA Banner */}
       <section className="relative overflow-hidden mb-24">

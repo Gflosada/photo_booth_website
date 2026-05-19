@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router';
-import { Camera, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/app/components/ui/button';
 import { trackBookNowClick, trackQuoteClick } from '@/lib/analytics';
 
@@ -27,10 +27,11 @@ export function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-2 group" aria-label="Lumea Booth home">
-            <span className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center transform group-hover:scale-110 transition-transform">
-              <Camera className="w-5 h-5 text-white" aria-hidden="true" />
-            </span>
-            <span className="text-xl text-white">Lumea Booth</span>
+            <img
+              src="/images/Logo%20w%20Print%20White%20PNG%201.svg"
+              alt="Lumea Booth"
+              className="h-12 w-auto max-w-[180px] transition-transform group-hover:scale-105 sm:max-w-[220px]"
+            />
           </Link>
 
           <div className="hidden lg:flex items-center gap-7">
