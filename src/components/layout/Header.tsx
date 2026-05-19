@@ -25,12 +25,12 @@ export function Header() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-lg border-b border-white/10' : 'bg-transparent'}`}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex h-16 items-center justify-between sm:h-20">
           <Link to="/" className="flex items-center gap-2 group" aria-label="ORLANDO PHOTO BOOTH EVENTS home">
             <img
               src="/images/Logo%20w%20Print%20White%20PNG.png"
               alt="ORLANDO PHOTO BOOTH EVENTS"
-              className="h-14 w-auto max-w-[190px] transition-transform group-hover:scale-105 sm:max-w-[260px]"
+              className="h-11 w-auto max-w-[170px] transition-transform group-hover:scale-105 sm:h-14 sm:max-w-[260px]"
             />
           </Link>
 

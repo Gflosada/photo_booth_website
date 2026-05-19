@@ -24,7 +24,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
   return (
     <div className="min-h-screen bg-black">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative flex min-h-[100svh] items-start justify-center overflow-hidden pb-16 pt-28 sm:min-h-screen sm:items-center sm:py-0">
         {/* Video Background Effect */}
         <div className="absolute inset-0">
           <video
@@ -65,29 +65,29 @@ export function HomePage({ onNavigate }: HomePageProps) {
         ))}
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 mx-auto max-w-7xl px-5 text-center sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
+            <div className="mb-5 hidden items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-md sm:inline-flex">
               <Star className="w-4 h-4 text-yellow-400" />
               <span className="text-white text-sm">Orlando-based · Fast quotes · Premium event experiences</span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl text-white mb-6 max-w-4xl mx-auto drop-shadow-2xl [text-shadow:_0_4px_32px_rgb(0_0_0_/_0.85)]">
+            <h1 className="mx-auto mb-5 max-w-4xl text-[2.65rem] leading-[1.04] text-white drop-shadow-2xl [text-shadow:_0_4px_32px_rgb(0_0_0_/_0.85)] sm:text-5xl md:text-7xl">
               Orlando Photo Booth Rentals for{' '}
               <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Unforgettable Events
               </span>{' '}
             </h1>
 
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto drop-shadow-xl [text-shadow:_0_2px_18px_rgb(0_0_0_/_0.85)]">
+            <p className="mx-auto mb-6 max-w-2xl text-base leading-7 text-white/90 drop-shadow-xl [text-shadow:_0_2px_18px_rgb(0_0_0_/_0.85)] sm:mb-8 sm:text-xl">
               Premium photo booth experiences for weddings, parties, corporate events, quinceañeras, and private celebrations across Orlando, Florida.
             </p>
 
-            <div className="flex flex-wrap items-center justify-center gap-3 mb-8 text-sm text-white/85">
+            <div className="mb-7 flex flex-wrap items-center justify-center gap-2 text-xs text-white/85 sm:mb-8 sm:gap-3 sm:text-sm">
               {['Orlando-based service', 'Fast quote response', 'Secure online payments', 'Custom event packages', 'Digital sharing included'].map((item) => (
                 <span key={item} className="rounded-full border border-white/15 bg-white/10 px-3 py-2 backdrop-blur-md">{item}</span>
               ))}
