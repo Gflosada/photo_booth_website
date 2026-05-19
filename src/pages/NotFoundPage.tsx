@@ -5,7 +5,7 @@ import { SEO } from '@/components/seo/SEO';
 export default function NotFoundPage() {
   return (
     <div className="min-h-screen bg-black pt-32 pb-24 flex items-center">
-      <SEO title="Page Not Found | Lumea Booth" description="The page you requested could not be found." path="/404" />
+      <SEO title="Page Not Found | Oralndo Ohiti Booth Events" description="The page you requested could not be found." path="/404" />
       <div className="max-w-3xl mx-auto px-4 text-center">
         <h1 className="text-6xl text-white mb-6">Page not found</h1>
         <p className="text-xl text-white/70 mb-8">Request a quote for your Orlando photo booth event.</p>

@@ -1,6 +1,6 @@
-# Lumea Booth Orlando
+# Oralndo Ohiti Booth Events
 
-Production-ready React, TypeScript, and Vite website for Lumea Booth, an Orlando photo booth rental business serving weddings, parties, corporate events, quinceaneras, and private celebrations across Central Florida.
+Production-ready React, TypeScript, and Vite website for Oralndo Ohiti Booth Events, an Orlando photo booth rental business serving weddings, parties, corporate events, quinceaneras, and private celebrations across Central Florida.
 
 ## Tech Stack
 

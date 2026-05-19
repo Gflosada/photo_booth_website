@@ -21,7 +21,7 @@ export default function SEOServicePage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-10 items-center mb-20">
           <div>
-            <p className="text-purple-300 mb-4 uppercase tracking-[0.3em] text-sm">Lumea Booth Orlando</p>
+            <p className="text-purple-300 mb-4 uppercase tracking-[0.3em] text-sm">Oralndo Ohiti Booth Events</p>
             <h1 className="text-5xl md:text-6xl text-white mb-6">{page.h1}</h1>
             <p className="text-xl text-white/70 mb-8">{page.description} Our premium setups are built for beautiful guest content, easy sharing, and a polished event experience across Orlando and Central Florida.</p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -45,7 +45,7 @@ export default function SEOServicePage() {
         </div>
 
         <Card className="bg-gradient-to-r from-purple-600 to-pink-600 border-0 rounded-3xl p-10 text-center mb-20">
-          <h2 className="text-3xl text-white mb-4">Plan your {page.service.toLowerCase()} with Lumea Booth</h2>
+          <h2 className="text-3xl text-white mb-4">Plan your {page.service.toLowerCase()} with Oralndo Ohiti Booth Events</h2>
           <p className="text-white/90 mb-8 max-w-2xl mx-auto">Tell us your date, venue, guest count, and event style. We will recommend a package that fits your timeline and goals.</p>
           <Button asChild className="bg-white text-purple-700 hover:bg-white/90 rounded-full px-8 py-6"><Link to="/quote">Request My Quote</Link></Button>
         </Card>

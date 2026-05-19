@@ -30,7 +30,7 @@ export default function App() {
         <Header />
 
         <main ref={mainRef}>
-          <Suspense fallback={<div className="min-h-screen bg-black pt-32 text-center text-white">Loading Lumea Booth...</div>}>
+          <Suspense fallback={<div className="min-h-screen bg-black pt-32 text-center text-white">Loading Oralndo Ohiti Booth Events...</div>}>
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/gallery" element={<GalleryPage />} />

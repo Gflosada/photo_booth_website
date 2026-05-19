@@ -15,7 +15,7 @@ export function Footer({ onNavigate }: FooterProps) {
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
                 <Camera className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl text-white">Lumea Booth</span>
+              <span className="text-xl text-white">Oralndo Ohiti Booth Events</span>
             </div>
             <p className="text-white/60 text-sm mb-4">
               Make every moment picture-perfect in Orlando.
@@ -78,7 +78,7 @@ export function Footer({ onNavigate }: FooterProps) {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-purple-400 flex-shrink-0" />
-                <p className="text-white/60 text-sm">hello@lumeabooth.com</p>
+                <p className="text-white/60 text-sm">hello@oralndoohitiboothevents.com</p>
               </div>
             </div>
           </div>
@@ -86,7 +86,7 @@ export function Footer({ onNavigate }: FooterProps) {
 
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/40 text-sm">
-            © 2025 Lumea Booth Orlando. All rights reserved.
+            © 2025 Oralndo Ohiti Booth Events. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
             <button className="text-white/40 hover:text-white transition-colors">

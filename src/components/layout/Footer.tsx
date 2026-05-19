@@ -13,12 +13,12 @@ export function Footer() {
               <span className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
                 <Camera className="w-5 h-5 text-white" />
               </span>
-              <span className="text-xl text-white">Lumea Booth</span>
+              <span className="text-xl text-white">Oralndo Ohiti Booth Events</span>
             </Link>
             <p className="text-white/60 text-sm mb-4">Premium photo booth rentals for Orlando weddings, parties, corporate events, and private celebrations.</p>
             <div className="flex gap-4">
-              <a href="https://instagram.com" aria-label="Lumea Booth on Instagram" className="w-10 h-10 rounded-full bg-white/10 hover:bg-purple-500 flex items-center justify-center transition-colors"><Instagram className="w-5 h-5 text-white" /></a>
-              <a href="https://facebook.com" aria-label="Lumea Booth on Facebook" className="w-10 h-10 rounded-full bg-white/10 hover:bg-purple-500 flex items-center justify-center transition-colors"><Facebook className="w-5 h-5 text-white" /></a>
+              <a href="https://instagram.com" aria-label="Oralndo Ohiti Booth Events on Instagram" className="w-10 h-10 rounded-full bg-white/10 hover:bg-purple-500 flex items-center justify-center transition-colors"><Instagram className="w-5 h-5 text-white" /></a>
+              <a href="https://facebook.com" aria-label="Oralndo Ohiti Booth Events on Facebook" className="w-10 h-10 rounded-full bg-white/10 hover:bg-purple-500 flex items-center justify-center transition-colors"><Facebook className="w-5 h-5 text-white" /></a>
             </div>
           </div>
 
@@ -45,7 +45,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/40 text-sm">© 2026 Lumea Booth Orlando. All rights reserved.</p>
+          <p className="text-white/40 text-sm">© 2026 Oralndo Ohiti Booth Events. All rights reserved.</p>
           <p className="text-white/40 text-sm">By appointment · Fast quote response · Digital sharing included</p>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router';
-import { Menu, X } from 'lucide-react';
+import { Camera, Menu, X } from 'lucide-react';
 import { Button } from '@/app/components/ui/button';
 import { trackBookNowClick, trackQuoteClick } from '@/lib/analytics';
 
@@ -26,12 +26,13 @@ export function Header() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-lg border-b border-white/10' : 'bg-transparent'}`}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center gap-2 group" aria-label="Lumea Booth home">
-            <img
-              src="/images/Logo%20w%20Print%20White%20PNG%201.svg"
-              alt="Lumea Booth"
-              className="h-12 w-auto max-w-[180px] transition-transform group-hover:scale-105 sm:max-w-[220px]"
-            />
+          <Link to="/" className="group flex min-w-0 items-center gap-2" aria-label="Oralndo Ohiti Booth Events home">
+            <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 to-pink-500 transition-transform group-hover:scale-105">
+              <Camera className="h-5 w-5 text-white" aria-hidden="true" />
+            </span>
+            <span className="max-w-[170px] truncate text-base text-white sm:max-w-[260px] sm:text-xl">
+              Oralndo Ohiti Booth Events
+            </span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-7">

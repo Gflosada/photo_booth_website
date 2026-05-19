@@ -1,42 +1,42 @@
 :root {
-  --lumea-black: #03020a;
-  --lumea-ink: #0b0714;
-  --lumea-white: #ffffff;
-  --lumea-soft-pink: #ff8bd2;
-  --lumea-pink: #ff35a5;
-  --lumea-purple: #7f35ff;
-  --lumea-electric-purple: #9b5cff;
-  --lumea-champagne: #ffd580;
-  --lumea-glass: rgba(255, 255, 255, 0.08);
-  --lumea-glass-border: rgba(255, 255, 255, 0.14);
-  --lumea-focus: #ffd580;
-  --lumea-radius-card: 1.5rem;
-  --lumea-radius-button: 999px;
-  --lumea-shadow-glow: 0 24px 80px rgba(127, 53, 255, 0.28);
-  --lumea-gradient-primary: linear-gradient(135deg, #7f35ff 0%, #ff35a5 100%);
-  --lumea-gradient-gold: linear-gradient(135deg, #ffd580 0%, #ff8bd2 100%);
-  --lumea-container: 80rem;
-  --lumea-section-y: clamp(4rem, 8vw, 7rem);
-  --lumea-motion-fast: 180ms;
-  --lumea-motion-base: 320ms;
-  --lumea-motion-slow: 700ms;
-  --lumea-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ohiti-black: #03020a;
+  --ohiti-ink: #0b0714;
+  --ohiti-white: #ffffff;
+  --ohiti-soft-pink: #ff8bd2;
+  --ohiti-pink: #ff35a5;
+  --ohiti-purple: #7f35ff;
+  --ohiti-electric-purple: #9b5cff;
+  --ohiti-champagne: #ffd580;
+  --ohiti-glass: rgba(255, 255, 255, 0.08);
+  --ohiti-glass-border: rgba(255, 255, 255, 0.14);
+  --ohiti-focus: #ffd580;
+  --ohiti-radius-card: 1.5rem;
+  --ohiti-radius-button: 999px;
+  --ohiti-shadow-glow: 0 24px 80px rgba(127, 53, 255, 0.28);
+  --ohiti-gradient-primary: linear-gradient(135deg, #7f35ff 0%, #ff35a5 100%);
+  --ohiti-gradient-gold: linear-gradient(135deg, #ffd580 0%, #ff8bd2 100%);
+  --ohiti-container: 80rem;
+  --ohiti-section-y: clamp(4rem, 8vw, 7rem);
+  --ohiti-motion-fast: 180ms;
+  --ohiti-motion-base: 320ms;
+  --ohiti-motion-slow: 700ms;
+  --ohiti-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 *:focus-visible {
-  outline: 2px solid var(--lumea-focus);
+  outline: 2px solid var(--ohiti-focus);
   outline-offset: 3px;
 }
 
-.lumea-container {
-  width: min(100% - 2rem, var(--lumea-container));
+.ohiti-container {
+  width: min(100% - 2rem, var(--ohiti-container));
   margin-inline: auto;
 }
 
-.lumea-glass-card {
-  background: var(--lumea-glass);
-  border: 1px solid var(--lumea-glass-border);
+.ohiti-glass-card {
+  background: var(--ohiti-glass);
+  border: 1px solid var(--ohiti-glass-border);
   backdrop-filter: blur(18px);
-  border-radius: var(--lumea-radius-card);
-  box-shadow: var(--lumea-shadow-glow);
+  border-radius: var(--ohiti-radius-card);
+  box-shadow: var(--ohiti-shadow-glow);
 }

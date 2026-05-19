@@ -348,7 +348,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <h2 className="text-4xl text-white text-center mb-12">
             Why Choose{' '}
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Lumea Booth
+              Oralndo Ohiti Booth Events
             </span>
           </h2>
         </ScrollReveal>
@@ -419,7 +419,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
           <h2 className="text-4xl md:text-5xl text-white mb-6">
-            Capture Joy. Create Memories. Lumea Booth Brings the Magic.
+            Capture Joy. Create Memories. Oralndo Ohiti Booth Events Brings the Magic.
           </h2>
           <Button
             onClick={() => onNavigate('booking')}

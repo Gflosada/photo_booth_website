@@ -45,7 +45,7 @@ export function Navbar({ onNavigate, currentPage }: NavbarProps) {
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center transform group-hover:scale-110 transition-transform">
               <Camera className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl text-white">Lumea Booth</span>
+            <span className="text-xl text-white">Oralndo Ohiti Booth Events</span>
           </button>
 
           {/* Desktop Navigation */}

@@ -14,13 +14,13 @@ export default async function handler(request: any, response: any) {
   // TODO: Replace placeholder line items with configured Stripe Price IDs for deposits/packages.
   const session = await stripe.checkout.sessions.create({
     mode: 'payment',
-    success_url: `${process.env.VITE_PUBLIC_SITE_URL || 'https://www.lumeabooth.com'}/thank-you`,
-    cancel_url: `${process.env.VITE_PUBLIC_SITE_URL || 'https://www.lumeabooth.com'}/booking`,
+    success_url: `${process.env.VITE_PUBLIC_SITE_URL || 'https://photo-booth-website-eight.vercel.app'}/thank-you`,
+    cancel_url: `${process.env.VITE_PUBLIC_SITE_URL || 'https://photo-booth-website-eight.vercel.app'}/booking`,
     line_items: [
       {
         price_data: {
           currency: 'usd',
-          product_data: { name: 'Lumea Booth Event Deposit' },
+          product_data: { name: 'Oralndo Ohiti Booth Events Deposit' },
           unit_amount: 5000,
         },
         quantity: 1,

@@ -49,7 +49,7 @@ export function ContactPage() {
   const contactInfo = [
     { icon: MapPin, label: 'Location', value: 'Orlando, Florida' },
     { icon: Phone, label: 'Phone', value: '(407) 555-BOOTH' },
-    { icon: Mail, label: 'Email', value: 'hello@lumeabooth.com' },
+    { icon: Mail, label: 'Email', value: 'hello@oralndoohitiboothevents.com' },
   ];
 
   return (

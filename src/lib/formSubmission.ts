@@ -33,10 +33,10 @@ async function insertLead(table: 'booking_requests' | 'quote_requests' | 'contac
   });
 
   if (error) {
-    return { ok: false, message: 'We could not submit your request. Please call or email Lumea Booth directly.' };
+    return { ok: false, message: 'We could not submit your request. Please call or email Oralndo Ohiti Booth Events directly.' };
   }
 
-  return { ok: true, message: 'Your request was sent. Lumea Booth will follow up with availability and pricing.' };
+  return { ok: true, message: 'Your request was sent. Oralndo Ohiti Booth Events will follow up with availability and pricing.' };
 }
 
 export const submitBooking = (values: LeadFormValues) => insertLead('booking_requests', values);

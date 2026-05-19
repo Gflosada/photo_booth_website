@@ -6,7 +6,7 @@ import { SEO } from '@/components/seo/SEO';
 export default function ThankYouPage() {
   return (
     <div className="min-h-screen bg-black pt-32 pb-24 flex items-center">
-      <SEO title="Thank You | Lumea Booth Orlando" description="Thank you for contacting Lumea Booth about your Orlando photo booth rental." path="/thank-you" />
+      <SEO title="Thank You | Oralndo Ohiti Booth Events" description="Thank you for contacting Oralndo Ohiti Booth Events about your Orlando photo booth rental." path="/thank-you" />
       <div className="max-w-3xl mx-auto px-4 text-center">
         <CheckCircle2 className="w-20 h-20 text-green-400 mx-auto mb-6" />
         <h1 className="text-5xl text-white mb-6">Thank you</h1>
