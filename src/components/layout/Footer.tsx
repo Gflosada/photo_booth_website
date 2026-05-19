@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer className="bg-black border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
             <Link to="/" className="flex items-center gap-2 mb-4">
               <span className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
@@ -27,24 +27,9 @@ export function Footer() {
             <div className="space-y-2">
               {[
                 ['Home', '/'],
-                ['Services', '/services'],
-                ['Packages', '/packages'],
                 ['Gallery', '/gallery'],
                 ['Get a Quote', '/quote'],
                 ['Contact', '/contact'],
-              ].map(([label, path]) => <Link key={path} to={path} className="block text-white/60 hover:text-purple-400 text-sm transition-colors">{label}</Link>)}
-            </div>
-          </div>
-
-          <div>
-            <h2 className="text-white mb-4 text-base">Orlando Services</h2>
-            <div className="space-y-2">
-              {[
-                ['Photo Booth Rental Orlando', '/photo-booth-rental-orlando'],
-                ['Wedding Photo Booth', '/wedding-photo-booth-orlando'],
-                ['360 Photo Booth', '/360-photo-booth-orlando'],
-                ['Corporate Photo Booth', '/corporate-photo-booth-orlando'],
-                ['Birthday Photo Booth', '/birthday-photo-booth-orlando'],
               ].map(([label, path]) => <Link key={path} to={path} className="block text-white/60 hover:text-purple-400 text-sm transition-colors">{label}</Link>)}
             </div>
           </div>

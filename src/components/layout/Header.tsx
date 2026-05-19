@@ -6,8 +6,6 @@ import { trackBookNowClick, trackQuoteClick } from '@/lib/analytics';
 
 const navItems = [
   { to: '/', label: 'Home' },
-  { to: '/services', label: 'Services' },
-  { to: '/packages', label: 'Packages' },
   { to: '/gallery', label: 'Gallery' },
   { to: '/quote', label: 'Get Quote' },
   { to: '/contact', label: 'Contact' },

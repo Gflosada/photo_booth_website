@@ -8,8 +8,6 @@ import { useGSAPPageTransition } from '@/components/animation/useGSAPPageTransit
 import { FloridaBackground } from './components/FloridaBackground';
 
 const HomePage = lazy(() => import('@/pages/HomePage'));
-const ServicesPage = lazy(() => import('@/pages/ServicesPage'));
-const PackagesPage = lazy(() => import('@/pages/PackagesPage'));
 const GalleryPage = lazy(() => import('@/pages/GalleryPage'));
 const BookingPage = lazy(() => import('@/pages/BookingPage'));
 const QuotePage = lazy(() => import('@/pages/QuotePage'));
@@ -35,8 +33,6 @@ export default function App() {
           <Suspense fallback={<div className="min-h-screen bg-black pt-32 text-center text-white">Loading Lumea Booth...</div>}>
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/services" element={<ServicesPage />} />
-              <Route path="/packages" element={<PackagesPage />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/booking" element={<BookingPage />} />
               <Route path="/quote" element={<QuotePage />} />

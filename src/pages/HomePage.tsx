@@ -7,7 +7,6 @@ import { faqs } from '@/data/faqs';
 
 const pageMap: Record<string, string> = {
   home: '/',
-  services: '/services',
   gallery: '/gallery',
   booking: '/booking',
   about: '/about',
