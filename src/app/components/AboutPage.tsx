@@ -71,7 +71,7 @@ export function AboutPage() {
 
             <div className="space-y-4 text-white/70 text-lg">
               <p>
-                Founded in 2022, Oralndo Ohiti Booth Events started with a simple mission: to make every celebration
+                Founded in 2022, ORLANDO PHOTO BOOTH EVENTS started with a simple mission: to make every celebration
                 in Orlando unforgettable through the power of photography and technology.
               </p>
               <p>
@@ -203,7 +203,7 @@ export function AboutPage() {
           <h2 className="text-3xl text-white mb-4">Proud to Serve Orlando</h2>
           <p className="text-white/90 text-lg mb-8">
             We partner with Orlando's finest venues and support local sustainability initiatives.
-            When you choose Oralndo Ohiti Booth Events, you're supporting a local business that cares about our community.
+            When you choose ORLANDO PHOTO BOOTH EVENTS, you're supporting a local business that cares about our community.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             {['The Alfond Inn', 'Luxmore Grande Estate', 'Ritz Carlton Orlando', 'Disney Wedding Pavilion'].map((venue) => (

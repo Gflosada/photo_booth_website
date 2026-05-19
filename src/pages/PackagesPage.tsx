@@ -9,7 +9,7 @@ import { trackPackageSelect, trackQuoteClick } from '@/lib/analytics';
 export default function PackagesPage() {
   return (
     <div className="min-h-screen bg-black pt-32 pb-24">
-      <SEO title="Orlando Photo Booth Packages | Oralndo Ohiti Booth Events" description="Compare Oralndo Ohiti Booth Events photo booth packages for classic booths, premium events, 360 video booth experiences, weddings, parties, and corporate activations." path="/packages" />
+      <SEO title="Orlando Photo Booth Packages | ORLANDO PHOTO BOOTH EVENTS" description="Compare ORLANDO PHOTO BOOTH EVENTS photo booth packages for classic booths, premium events, 360 video booth experiences, weddings, parties, and corporate activations." path="/packages" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 text-white/80 mb-6"><Sparkles className="w-4 h-4 text-yellow-300" /> Custom Orlando event packages</div>

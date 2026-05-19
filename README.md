@@ -1,6 +1,6 @@
-# Oralndo Ohiti Booth Events
+# ORLANDO PHOTO BOOTH EVENTS
 
-Production-ready React, TypeScript, and Vite website for Oralndo Ohiti Booth Events, an Orlando photo booth rental business serving weddings, parties, corporate events, quinceaneras, and private celebrations across Central Florida.
+Production-ready React, TypeScript, and Vite website for ORLANDO PHOTO BOOTH EVENTS, an Orlando photo booth rental business serving weddings, parties, corporate events, quinceaneras, and private celebrations across Central Florida.
 
 ## Tech Stack
 

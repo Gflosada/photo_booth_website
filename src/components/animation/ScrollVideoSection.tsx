@@ -70,7 +70,7 @@ export function ScrollVideoSection({ onBookClick }: ScrollVideoSectionProps) {
       setupTextTimeline();
 
       videoTrigger = ScrollTrigger.create({
-        id: 'ohiti-scroll-video-section',
+        id: 'lumea-scroll-video-section',
         trigger: section,
         start: 'top top',
         end: 'bottom bottom',

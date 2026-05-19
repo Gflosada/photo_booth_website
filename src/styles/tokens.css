@@ -1,42 +1,42 @@
 :root {
-  --ohiti-black: #03020a;
-  --ohiti-ink: #0b0714;
-  --ohiti-white: #ffffff;
-  --ohiti-soft-pink: #ff8bd2;
-  --ohiti-pink: #ff35a5;
-  --ohiti-purple: #7f35ff;
-  --ohiti-electric-purple: #9b5cff;
-  --ohiti-champagne: #ffd580;
-  --ohiti-glass: rgba(255, 255, 255, 0.08);
-  --ohiti-glass-border: rgba(255, 255, 255, 0.14);
-  --ohiti-focus: #ffd580;
-  --ohiti-radius-card: 1.5rem;
-  --ohiti-radius-button: 999px;
-  --ohiti-shadow-glow: 0 24px 80px rgba(127, 53, 255, 0.28);
-  --ohiti-gradient-primary: linear-gradient(135deg, #7f35ff 0%, #ff35a5 100%);
-  --ohiti-gradient-gold: linear-gradient(135deg, #ffd580 0%, #ff8bd2 100%);
-  --ohiti-container: 80rem;
-  --ohiti-section-y: clamp(4rem, 8vw, 7rem);
-  --ohiti-motion-fast: 180ms;
-  --ohiti-motion-base: 320ms;
-  --ohiti-motion-slow: 700ms;
-  --ohiti-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --opbe-black: #03020a;
+  --opbe-ink: #0b0714;
+  --opbe-white: #ffffff;
+  --opbe-soft-pink: #ff8bd2;
+  --opbe-pink: #ff35a5;
+  --opbe-purple: #7f35ff;
+  --opbe-electric-purple: #9b5cff;
+  --opbe-champagne: #ffd580;
+  --opbe-glass: rgba(255, 255, 255, 0.08);
+  --opbe-glass-border: rgba(255, 255, 255, 0.14);
+  --opbe-focus: #ffd580;
+  --opbe-radius-card: 1.5rem;
+  --opbe-radius-button: 999px;
+  --opbe-shadow-glow: 0 24px 80px rgba(127, 53, 255, 0.28);
+  --opbe-gradient-primary: linear-gradient(135deg, #7f35ff 0%, #ff35a5 100%);
+  --opbe-gradient-gold: linear-gradient(135deg, #ffd580 0%, #ff8bd2 100%);
+  --opbe-container: 80rem;
+  --opbe-section-y: clamp(4rem, 8vw, 7rem);
+  --opbe-motion-fast: 180ms;
+  --opbe-motion-base: 320ms;
+  --opbe-motion-slow: 700ms;
+  --opbe-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 *:focus-visible {
-  outline: 2px solid var(--ohiti-focus);
+  outline: 2px solid var(--opbe-focus);
   outline-offset: 3px;
 }
 
-.ohiti-container {
-  width: min(100% - 2rem, var(--ohiti-container));
+.opbe-container {
+  width: min(100% - 2rem, var(--opbe-container));
   margin-inline: auto;
 }
 
-.ohiti-glass-card {
-  background: var(--ohiti-glass);
-  border: 1px solid var(--ohiti-glass-border);
+.opbe-glass-card {
+  background: var(--opbe-glass);
+  border: 1px solid var(--opbe-glass-border);
   backdrop-filter: blur(18px);
-  border-radius: var(--ohiti-radius-card);
-  box-shadow: var(--ohiti-shadow-glow);
+  border-radius: var(--opbe-radius-card);
+  box-shadow: var(--opbe-shadow-glow);
 }

@@ -20,7 +20,7 @@ export default async function handler(request: any, response: any) {
       {
         price_data: {
           currency: 'usd',
-          product_data: { name: 'Oralndo Ohiti Booth Events Deposit' },
+          product_data: { name: 'ORLANDO PHOTO BOOTH EVENTS Event Deposit' },
           unit_amount: 5000,
         },
         quantity: 1,

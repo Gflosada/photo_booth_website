@@ -325,7 +325,7 @@ export function BookingPage() {
             </motion.div>
             <h2 className="text-4xl text-white mb-4">Booking Confirmed!</h2>
             <p className="text-xl text-white/70 mb-8">
-              Thank you for choosing Oralndo Ohiti Booth Events. We'll send a confirmation email shortly.
+              Thank you for choosing ORLANDO PHOTO BOOTH EVENTS. We'll send a confirmation email shortly.
             </p>
             <Card className="bg-white/5 border-white/10 p-8 rounded-2xl text-left">
               <h3 className="text-xl text-white mb-4">What's Next?</h3>

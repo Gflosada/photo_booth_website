@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Camera } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 interface NavbarProps {
   onNavigate: (page: string) => void;
@@ -42,10 +42,11 @@ export function Navbar({ onNavigate, currentPage }: NavbarProps) {
             onClick={() => onNavigate('home')}
             className="flex items-center gap-2 group"
           >
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center transform group-hover:scale-110 transition-transform">
-              <Camera className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-xl text-white">Oralndo Ohiti Booth Events</span>
+            <img
+              src="/images/Logo%20w%20Print%20White%20PNG.png"
+              alt="ORLANDO PHOTO BOOTH EVENTS"
+              className="h-14 w-auto max-w-[240px] transition-transform group-hover:scale-105"
+            />
           </button>
 
           {/* Desktop Navigation */}

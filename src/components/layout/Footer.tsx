@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { Camera, Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react';
+import { Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react';
 import { BUSINESS_EMAIL, BUSINESS_PHONE, serviceAreas } from '@/lib/constants';
 import { trackEmailClick, trackPhoneClick } from '@/lib/analytics';
 
@@ -10,15 +10,16 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <span className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-                <Camera className="w-5 h-5 text-white" />
-              </span>
-              <span className="text-xl text-white">Oralndo Ohiti Booth Events</span>
+              <img
+                src="/images/Logo%20w%20Print%20White%20PNG.png"
+                alt="ORLANDO PHOTO BOOTH EVENTS"
+                className="h-14 w-auto max-w-[240px]"
+              />
             </Link>
             <p className="text-white/60 text-sm mb-4">Premium photo booth rentals for Orlando weddings, parties, corporate events, and private celebrations.</p>
             <div className="flex gap-4">
-              <a href="https://instagram.com" aria-label="Oralndo Ohiti Booth Events on Instagram" className="w-10 h-10 rounded-full bg-white/10 hover:bg-purple-500 flex items-center justify-center transition-colors"><Instagram className="w-5 h-5 text-white" /></a>
-              <a href="https://facebook.com" aria-label="Oralndo Ohiti Booth Events on Facebook" className="w-10 h-10 rounded-full bg-white/10 hover:bg-purple-500 flex items-center justify-center transition-colors"><Facebook className="w-5 h-5 text-white" /></a>
+              <a href="https://instagram.com" aria-label="ORLANDO PHOTO BOOTH EVENTS on Instagram" className="w-10 h-10 rounded-full bg-white/10 hover:bg-purple-500 flex items-center justify-center transition-colors"><Instagram className="w-5 h-5 text-white" /></a>
+              <a href="https://facebook.com" aria-label="ORLANDO PHOTO BOOTH EVENTS on Facebook" className="w-10 h-10 rounded-full bg-white/10 hover:bg-purple-500 flex items-center justify-center transition-colors"><Facebook className="w-5 h-5 text-white" /></a>
             </div>
           </div>
 
@@ -45,7 +46,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/40 text-sm">© 2026 Oralndo Ohiti Booth Events. All rights reserved.</p>
+          <p className="text-white/40 text-sm">© 2026 ORLANDO PHOTO BOOTH EVENTS. All rights reserved.</p>
           <p className="text-white/40 text-sm">By appointment · Fast quote response · Digital sharing included</p>
         </div>
       </div>
