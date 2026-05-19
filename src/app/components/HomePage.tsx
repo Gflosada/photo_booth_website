@@ -93,7 +93,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col justify-center gap-3 pb-6 sm:flex-row sm:gap-4 sm:pb-0">
               <Button
                 onClick={() => onNavigate('booking')}
                 className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-6 rounded-full text-lg shadow-lg shadow-purple-500/50"
@@ -125,9 +125,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* Quick Booking Widget */}
-      <section className="relative -mt-20 z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
-        <Card className="bg-white/[0.04] backdrop-blur-md border border-white/15 p-8 rounded-3xl shadow-2xl">
-          <h3 className="text-2xl text-white mb-6 text-center">Quick Booking</h3>
+      <section className="relative z-20 mx-auto mb-20 max-w-5xl px-4 sm:-mt-20 sm:mb-24 sm:px-6 lg:px-8">
+        <Card className="rounded-3xl border border-white/15 bg-white/[0.04] p-5 shadow-2xl backdrop-blur-md sm:p-8">
+          <h3 className="mb-6 text-center text-2xl text-white">Quick Booking</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div>
               <label className="text-white/70 text-sm mb-2 block">Event Date</label>
