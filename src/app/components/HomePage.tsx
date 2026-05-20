@@ -438,8 +438,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
             },
             {
               icon: Share2,
-              title: 'AI-Enhanced Sharing',
-              description: 'Instant digital delivery with QR codes, social media integration, and live galleries.',
+              title: 'Online Media Gallery',
+              description:
+                'Guests can access their photos and videos online after the event through a private, easy-to-share gallery.',
               gradient: 'from-[#D4AF37] to-[#B8860B]',
             },
           ].map((feature, index) => (
