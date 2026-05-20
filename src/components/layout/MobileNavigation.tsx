@@ -4,7 +4,9 @@ import { trackBookNowClick, trackQuoteClick } from '@/lib/analytics';
 
 export function MobileNavigation() {
   const location = useLocation();
-  if (location.pathname === '/booking') return null;
+  const hiddenPaths = new Set(['/booking', '/contact', '/quote']);
+
+  if (hiddenPaths.has(location.pathname)) return null;
 
   return (
     <div className="fixed bottom-4 left-4 right-4 z-50 grid grid-cols-2 gap-3 md:hidden">
