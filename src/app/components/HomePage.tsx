@@ -440,7 +440,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               icon: Share2,
               title: 'Online Media Gallery',
               description:
-                'Guests can access their photos and videos online after the event through a private, easy-to-share gallery.',
+                'Guests can access their photos and videos online after the event.',
               gradient: 'from-[#D4AF37] to-[#B8860B]',
             },
           ].map((feature, index) => (
