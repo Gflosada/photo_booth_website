@@ -42,7 +42,7 @@ export function AboutPage() {
             transition={{ duration: 0.6 }}
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl blur-3xl opacity-20" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37] to-[#B8860B] rounded-3xl blur-3xl opacity-20" />
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1550926811-4b25838fabae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdW5zZXQlMjBmbG9yaWRhJTIwcGFsbXxlbnwxfHx8fDE3NjIyNzk0OTR8MA&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Orlando sunset"
@@ -58,13 +58,13 @@ export function AboutPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
-              <Star className="w-4 h-4 text-yellow-400" />
+              <Star className="w-4 h-4 text-[#F5D76E]" />
               <span className="text-white text-sm">Born in Orlando · Built to Capture Moments</span>
             </div>
 
             <h1 className="text-5xl text-white mb-6">
               Our{' '}
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="opbe-gold-text">
                 Story
               </span>
             </h1>
@@ -88,10 +88,10 @@ export function AboutPage() {
 
             {/* Badges */}
             <div className="flex gap-4 mt-8">
-              <div className="px-4 py-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm">
+              <div className="px-4 py-2 rounded-full opbe-btn-primary text-sm">
                 5-Star Google Reviews
               </div>
-              <div className="px-4 py-2 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white text-sm">
+              <div className="px-4 py-2 rounded-full bg-gradient-to-r from-[#B8860B] to-[#F5D76E] text-white text-sm">
                 Local Favorite 2025
               </div>
             </div>
@@ -104,8 +104,8 @@ export function AboutPage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat) => (
             <ScaleOnScroll key={stat.label}>
-              <Card className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-3xl text-center hover:bg-white/10 transition-all">
-                <div className="text-4xl md:text-5xl bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
+              <Card className="opbe-premium-card p-8 rounded-3xl text-center hover:bg-white/10 transition-all">
+                <div className="text-4xl md:text-5xl opbe-gold-text mb-2">
                   {stat.number}
                 </div>
                 <div className="text-white/60">{stat.label}</div>
@@ -120,14 +120,14 @@ export function AboutPage() {
         <ScrollReveal direction="up">
           <h2 className="text-4xl text-white text-center mb-12">
           Behind the{' '}
-          <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <span className="opbe-gold-text">
             Scenes
           </span>
         </h2>
         </ScrollReveal>
 
         <ScrollReveal direction="left">
-          <Card className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden">
+          <Card className="opbe-premium-card rounded-3xl overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="relative h-96 md:h-auto">
               <ImageWithFallback
@@ -171,7 +171,7 @@ export function AboutPage() {
         <ScrollReveal direction="up">
           <h2 className="text-4xl text-white text-center mb-12">
           Our{' '}
-          <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <span className="opbe-gold-text">
             Values
           </span>
         </h2>
@@ -184,9 +184,9 @@ export function AboutPage() {
               direction="up"
               delay={index * 0.15}
             >
-              <Card className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-all text-center">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mx-auto mb-6">
-                  <value.icon className="w-8 h-8 text-white" />
+              <Card className="opbe-premium-card p-8 rounded-3xl hover:bg-white/10 transition-all text-center">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#B8860B] flex items-center justify-center mx-auto mb-6">
+                  <value.icon className="w-8 h-8 text-black" />
                 </div>
                 <h3 className="text-xl text-white mb-3">{value.title}</h3>
                 <p className="text-white/60">{value.description}</p>
@@ -199,7 +199,7 @@ export function AboutPage() {
       {/* Local Partnership */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScaleOnScroll>
-          <Card className="bg-gradient-to-r from-purple-600 to-pink-600 border-0 rounded-3xl p-12 text-center">
+          <Card className="bg-[linear-gradient(135deg,rgba(212,175,55,0.18)_0%,rgba(11,11,11,0.94)_100%)] border border-[rgba(212,175,55,0.28)] border-0 rounded-3xl p-12 text-center">
           <h2 className="text-3xl text-white mb-4">Proud to Serve Orlando</h2>
           <p className="text-white/90 text-lg mb-8">
             We partner with Orlando's finest venues and support local sustainability initiatives.

@@ -10,9 +10,9 @@ export function FloridaBackground() {
         >
           <defs>
             <linearGradient id="sunset" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" style={{ stopColor: '#7F35FF', stopOpacity: 0.3 }} />
-              <stop offset="50%" style={{ stopColor: '#FFD580', stopOpacity: 0.2 }} />
-              <stop offset="100%" style={{ stopColor: '#FF35A5', stopOpacity: 0.1 }} />
+              <stop offset="0%" style={{ stopColor: '#D4AF37', stopOpacity: 0.3 }} />
+              <stop offset="50%" style={{ stopColor: '#F7E7B4', stopOpacity: 0.2 }} />
+              <stop offset="100%" style={{ stopColor: '#F5D76E', stopOpacity: 0.1 }} />
             </linearGradient>
           </defs>
           

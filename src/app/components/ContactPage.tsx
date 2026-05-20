@@ -63,7 +63,7 @@ export function ContactPage() {
         >
           <h1 className="text-5xl md:text-6xl text-white mb-6">
             Let's{' '}
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="opbe-gold-text">
               Connect
             </span>
           </h1>
@@ -77,7 +77,7 @@ export function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <ScrollReveal direction="left">
-            <Card className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-3xl">
+            <Card className="opbe-premium-card p-8 rounded-3xl">
               <h2 className="text-2xl text-white mb-6">Send Us a Message</h2>
               <form className="space-y-6">
                 <div>
@@ -86,7 +86,7 @@ export function ContactPage() {
                     placeholder="Your name"
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    className="bg-white/5 border-white/10 text-white placeholder:text-white/40"
+                    className="opbe-premium-card text-white placeholder:text-white/40"
                   />
                 </div>
 
@@ -97,14 +97,14 @@ export function ContactPage() {
                     placeholder="your@email.com"
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    className="bg-white/5 border-white/10 text-white placeholder:text-white/40"
+                    className="opbe-premium-card text-white placeholder:text-white/40"
                   />
                 </div>
 
                 <div>
                   <Label className="text-white mb-2 block">Event Type</Label>
                   <Select value={formData.eventType} onValueChange={(value) => setFormData({...formData, eventType: value})}>
-                    <SelectTrigger className="bg-white/5 border-white/10 text-white">
+                    <SelectTrigger className="opbe-premium-card text-white">
                       <SelectValue placeholder="Select event type" />
                     </SelectTrigger>
                     <SelectContent>
@@ -122,7 +122,7 @@ export function ContactPage() {
                     type="date"
                     value={formData.eventDate}
                     onChange={(e) => setFormData({...formData, eventDate: e.target.value})}
-                    className="bg-white/5 border-white/10 text-white"
+                    className="opbe-premium-card text-white"
                   />
                 </div>
 
@@ -133,11 +133,11 @@ export function ContactPage() {
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                     rows={5}
-                    className="bg-white/5 border-white/10 text-white placeholder:text-white/40 resize-none"
+                    className="opbe-premium-card text-white placeholder:text-white/40 resize-none"
                   />
                 </div>
 
-                <Button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-6 rounded-xl">
+                <Button className="w-full opbe-btn-primary py-6">
                   Send Message
                 </Button>
               </form>
@@ -149,14 +149,16 @@ export function ContactPage() {
             {/* Contact Cards */}
             <div className="space-y-4">
               {contactInfo.map((info) => (
-                <Card key={info.label} className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-all">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0">
-                      <info.icon className="w-6 h-6 text-white" />
+                <Card key={info.label} className="opbe-premium-card overflow-hidden rounded-2xl p-5 transition-all hover:bg-white/10 sm:p-6">
+                  <div className="flex min-w-0 items-start gap-4 sm:items-center">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#B8860B]">
+                      <info.icon className="w-6 h-6 text-black" />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <p className="text-white/60 text-sm">{info.label}</p>
-                      <p className="text-white text-lg">{info.value}</p>
+                      <p className="break-words text-base leading-6 text-white sm:text-lg">
+                        {info.value}
+                      </p>
                     </div>
                   </div>
                 </Card>
@@ -164,31 +166,31 @@ export function ContactPage() {
             </div>
 
             {/* Social Links */}
-            <Card className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-2xl">
+            <Card className="opbe-premium-card p-6 rounded-2xl">
               <h3 className="text-white mb-4">Follow Us</h3>
               <div className="flex gap-4">
                 <a
                   href="#"
-                  className="w-12 h-12 rounded-xl bg-white/10 hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 flex items-center justify-center transition-all"
+                  className="w-12 h-12 rounded-xl border border-[rgba(245,215,110,0.5)] bg-[linear-gradient(135deg,#D4AF37_0%,#F5D76E_50%,#B8860B_100%)] flex items-center justify-center transition-all hover:shadow-[0_0_24px_rgba(212,175,55,0.24)]"
                 >
-                  <Instagram className="w-6 h-6 text-white" />
+                  <Instagram className="w-6 h-6 text-black" />
                 </a>
                 <a
                   href="#"
-                  className="w-12 h-12 rounded-xl bg-white/10 hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 flex items-center justify-center transition-all"
+                  className="w-12 h-12 rounded-xl border border-[rgba(245,215,110,0.5)] bg-[linear-gradient(135deg,#D4AF37_0%,#F5D76E_50%,#B8860B_100%)] flex items-center justify-center transition-all hover:shadow-[0_0_24px_rgba(212,175,55,0.24)]"
                 >
-                  <MessageCircle className="w-6 h-6 text-white" />
+                  <MessageCircle className="w-6 h-6 text-black" />
                 </a>
               </div>
             </Card>
 
             {/* Map */}
-            <Card className="bg-white/5 backdrop-blur-sm border border-white/10 p-4 rounded-2xl overflow-hidden">
+            <Card className="opbe-premium-card p-4 rounded-2xl overflow-hidden">
               <div className="h-64 bg-white/10 rounded-xl flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0">
-                  <div className="w-full h-full bg-gradient-to-br from-purple-500/20 to-pink-500/20" />
+                  <div className="w-full h-full bg-gradient-to-br from-[#D4AF37]/20 to-[#F5D76E]/20" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <MapPin className="w-12 h-12 text-purple-400" />
+                    <MapPin className="w-12 h-12 text-[#D4AF37]" />
                   </div>
                 </div>
                 <p className="text-white/60 relative z-10">Orlando, FL</p>
@@ -202,18 +204,18 @@ export function ContactPage() {
           <ScrollReveal direction="up">
             <h2 className="text-4xl text-white text-center mb-12">
             Frequently Asked{' '}
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="opbe-gold-text">
               Questions
             </span>
           </h2>
           </ScrollReveal>
 
           <ScaleOnScroll>
-            <Card className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden">
+            <Card className="opbe-premium-card rounded-3xl overflow-hidden">
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`} className="border-white/10">
-                  <AccordionTrigger className="px-8 py-6 text-white hover:text-purple-400 hover:no-underline">
+                  <AccordionTrigger className="px-8 py-6 text-white hover:text-[#D4AF37] hover:no-underline">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="px-8 pb-6 text-white/70">
@@ -226,22 +228,6 @@ export function ContactPage() {
           </ScaleOnScroll>
         </div>
       </div>
-
-      {/* Floating WhatsApp Button */}
-      <motion.a
-        href="#"
-        className="fixed bottom-24 left-8 z-40 group"
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ delay: 1, type: 'spring' }}
-      >
-        <div className="relative">
-          <div className="absolute inset-0 bg-green-500 rounded-full blur-xl opacity-50 group-hover:opacity-75 transition-opacity animate-pulse" />
-          <div className="relative w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
-            <MessageCircle className="w-7 h-7 text-white" />
-          </div>
-        </div>
-      </motion.a>
     </div>
   );
 }

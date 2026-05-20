@@ -1,20 +1,32 @@
 :root {
-  --opbe-black: #03020a;
-  --opbe-ink: #0b0714;
-  --opbe-white: #ffffff;
-  --opbe-soft-pink: #ff8bd2;
-  --opbe-pink: #ff35a5;
-  --opbe-purple: #7f35ff;
-  --opbe-electric-purple: #9b5cff;
-  --opbe-champagne: #ffd580;
-  --opbe-glass: rgba(255, 255, 255, 0.08);
-  --opbe-glass-border: rgba(255, 255, 255, 0.14);
-  --opbe-focus: #ffd580;
+  --color-black: #000000;
+  --color-charcoal: #0b0b0b;
+  --color-gold: #d4af37;
+  --color-gold-light: #f5d76e;
+  --color-champagne: #f7e7b4;
+  --color-white: #ffffff;
+  --color-gray-light: #eaeaea;
+  --background-main: #000000;
+  --background-section: #0b0b0b;
+  --text-primary: #ffffff;
+  --text-secondary: #eaeaea;
+  --accent-primary: #d4af37;
+  --accent-secondary: #f5d76e;
+  --border-gold: rgba(212, 175, 55, 0.35);
+  --opbe-black: var(--color-black);
+  --opbe-ink: var(--color-charcoal);
+  --opbe-white: var(--color-white);
+  --opbe-champagne: var(--color-champagne);
+  --opbe-gold: var(--color-gold);
+  --opbe-gold-light: var(--color-gold-light);
+  --opbe-glass: rgba(255, 255, 255, 0.055);
+  --opbe-glass-border: rgba(212, 175, 55, 0.22);
+  --opbe-focus: var(--color-gold-light);
   --opbe-radius-card: 1.5rem;
   --opbe-radius-button: 999px;
-  --opbe-shadow-glow: 0 24px 80px rgba(127, 53, 255, 0.28);
-  --opbe-gradient-primary: linear-gradient(135deg, #7f35ff 0%, #ff35a5 100%);
-  --opbe-gradient-gold: linear-gradient(135deg, #ffd580 0%, #ff8bd2 100%);
+  --opbe-shadow-glow: 0 24px 80px rgba(212, 175, 55, 0.2);
+  --opbe-gradient-primary: linear-gradient(135deg, #d4af37 0%, #f5d76e 50%, #b8860b 100%);
+  --opbe-gradient-gold: linear-gradient(135deg, #d4af37 0%, #f5d76e 50%, #b8860b 100%);
   --opbe-container: 80rem;
   --opbe-section-y: clamp(4rem, 8vw, 7rem);
   --opbe-motion-fast: 180ms;
@@ -39,4 +51,88 @@
   backdrop-filter: blur(18px);
   border-radius: var(--opbe-radius-card);
   box-shadow: var(--opbe-shadow-glow);
+}
+
+.opbe-gold-text {
+  background: linear-gradient(135deg, #d4af37 0%, #f5d76e 48%, #f7e7b4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.opbe-section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  background: rgba(212, 175, 55, 0.08);
+  color: #f7e7b4;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  backdrop-filter: blur(16px);
+}
+
+.opbe-btn-primary {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(245, 215, 110, 0.6);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #d4af37 0%, #f5d76e 50%, #b8860b 100%);
+  color: #000000;
+  font-weight: 700;
+  box-shadow: 0 0 24px rgba(212, 175, 55, 0.25);
+}
+
+.opbe-btn-primary:hover {
+  color: #000000;
+  box-shadow: 0 0 34px rgba(212, 175, 55, 0.34);
+  transform: translateY(-1px);
+}
+
+.opbe-btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-120%) skewX(-18deg);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transition: transform 700ms var(--opbe-ease-out);
+}
+
+.opbe-btn-primary:hover::after {
+  transform: translateX(120%) skewX(-18deg);
+}
+
+.opbe-btn-secondary {
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.18);
+  color: #ffffff;
+  backdrop-filter: blur(14px);
+}
+
+.opbe-btn-secondary:hover {
+  border-color: rgba(245, 215, 110, 0.78);
+  background: rgba(212, 175, 55, 0.1);
+  color: #ffffff;
+  box-shadow: 0 0 24px rgba(212, 175, 55, 0.16);
+}
+
+.opbe-premium-card {
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.025));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+}
+
+.opbe-premium-card-hover {
+  transition: transform 320ms var(--opbe-ease-out), border-color 320ms var(--opbe-ease-out), box-shadow 320ms var(--opbe-ease-out), background 320ms var(--opbe-ease-out);
+}
+
+.opbe-premium-card-hover:hover {
+  transform: translateY(-6px);
+  border-color: rgba(245, 215, 110, 0.45);
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.09), rgba(255, 255, 255, 0.035));
+  box-shadow: 0 28px 90px rgba(212, 175, 55, 0.15);
 }

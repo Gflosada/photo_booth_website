@@ -105,7 +105,7 @@ export function ScrollVideoSection({ onBookClick }: ScrollVideoSectionProps) {
   return (
     <section
       ref={sectionRef}
-      className={`relative bg-black text-white ${reducedMotion ? 'min-h-screen' : 'h-[400vh]'}`}
+      className={`relative hidden bg-black text-white md:block ${reducedMotion ? 'min-h-screen' : 'h-[400vh]'}`}
       aria-label="Cinematic photo booth experience"
     >
       <div className="sticky top-0 h-screen min-h-[680px] overflow-hidden md:min-h-screen">
@@ -127,7 +127,7 @@ export function ScrollVideoSection({ onBookClick }: ScrollVideoSectionProps) {
         >
           <div className="max-w-3xl">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white/85 backdrop-blur-md">
-              <Sparkles className="h-4 w-4 text-yellow-300" />
+              <Sparkles className="h-4 w-4 text-[#F5D76E]" />
               Cinematic event memories, controlled by the moment
             </div>
 
@@ -155,7 +155,7 @@ export function ScrollVideoSection({ onBookClick }: ScrollVideoSectionProps) {
 
             <Button
               onClick={onBookClick}
-              className="mt-8 bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-6 text-lg text-white shadow-lg shadow-purple-500/40 hover:from-purple-600 hover:to-pink-600"
+              className="mt-8 opbe-btn-primary px-8 py-6 text-lg"
             >
               Book Your Photo Booth
               <ChevronRight className="ml-2 h-5 w-5" />

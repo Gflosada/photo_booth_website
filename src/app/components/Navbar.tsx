@@ -57,13 +57,13 @@ export function Navbar({ onNavigate, currentPage }: NavbarProps) {
                 onClick={() => onNavigate(item.id)}
                 className={`text-sm transition-colors relative ${
                   currentPage === item.id
-                    ? 'text-purple-400'
+                    ? 'text-[#D4AF37]'
                     : 'text-white/70 hover:text-white'
                 }`}
               >
                 {item.label}
                 {currentPage === item.id && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500" />
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-[#D4AF37] to-[#B8860B]" />
                 )}
               </button>
             ))}
@@ -90,7 +90,7 @@ export function Navbar({ onNavigate, currentPage }: NavbarProps) {
                 }}
                 className={`block w-full text-left px-4 py-3 text-sm transition-colors ${
                   currentPage === item.id
-                    ? 'text-purple-400 bg-white/5'
+                    ? 'text-[#D4AF37] bg-white/5'
                     : 'text-white/70 hover:text-white hover:bg-white/5'
                 }`}
               >

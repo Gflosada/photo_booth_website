@@ -24,13 +24,13 @@ export function Footer({ onNavigate }: FooterProps) {
             <div className="flex gap-4">
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-purple-500 flex items-center justify-center transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#D4AF37] flex items-center justify-center transition-colors"
               >
                 <Instagram className="w-5 h-5 text-white" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-purple-500 flex items-center justify-center transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#D4AF37] flex items-center justify-center transition-colors"
               >
                 <Facebook className="w-5 h-5 text-white" />
               </a>
@@ -45,7 +45,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 <button
                   key={item}
                   onClick={() => onNavigate(item.toLowerCase())}
-                  className="block text-white/60 hover:text-purple-400 text-sm transition-colors"
+                  className="block text-white/60 hover:text-[#D4AF37] text-sm transition-colors"
                 >
                   {item}
                 </button>
@@ -70,15 +70,15 @@ export function Footer({ onNavigate }: FooterProps) {
             <h3 className="text-white mb-4">Contact Us</h3>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-0.5" />
                 <p className="text-white/60 text-sm">Orlando, Florida</p>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-purple-400 flex-shrink-0" />
+                <Phone className="w-5 h-5 text-[#D4AF37] flex-shrink-0" />
                 <p className="text-white/60 text-sm">(407) 555-BOOTH</p>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-purple-400 flex-shrink-0" />
+                <Mail className="w-5 h-5 text-[#D4AF37] flex-shrink-0" />
                 <p className="text-white/60 text-sm">hello@orlandophotoboothevents.com</p>
               </div>
             </div>

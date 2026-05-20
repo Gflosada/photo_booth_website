@@ -27,12 +27,12 @@ export function BookingPage() {
   const progress = (step / totalSteps) * 100;
 
   const boothOptions = [
-    { id: 'mirror', icon: Camera, title: 'Classic Mirror Booth', gradient: 'from-purple-500 to-blue-500' },
-    { id: '360', icon: Video, title: '360° Glam Booth', gradient: 'from-pink-500 to-orange-500' },
-    { id: 'ai', icon: Sparkles, title: 'AI Filter Booth', gradient: 'from-purple-500 to-pink-500' },
-    { id: 'selfie', icon: Smartphone, title: 'Selfie Pod', gradient: 'from-green-500 to-teal-500' },
-    { id: 'wall', icon: ImageIcon, title: 'Event Wall Booth', gradient: 'from-orange-500 to-red-500' },
-    { id: 'brand', icon: Award, title: 'Brand Activation Booth', gradient: 'from-blue-500 to-purple-500' },
+    { id: 'mirror', icon: Camera, title: 'Classic Mirror Booth', gradient: 'from-[#D4AF37] to-[#B8860B]' },
+    { id: '360', icon: Video, title: '360° Glam Booth', gradient: 'from-[#D4AF37] to-[#F5D76E]' },
+    { id: 'ai', icon: Sparkles, title: 'AI Filter Booth', gradient: 'from-[#D4AF37] to-[#B8860B]' },
+    { id: 'selfie', icon: Smartphone, title: 'Selfie Pod', gradient: 'from-[#D4AF37] to-[#8C6A10]' },
+    { id: 'wall', icon: ImageIcon, title: 'Event Wall Booth', gradient: 'from-[#B8860B] to-[#F5D76E]' },
+    { id: 'brand', icon: Award, title: 'Brand Activation Booth', gradient: 'from-[#D4AF37] to-[#F7E7B4]' },
   ];
 
   const addOns = [
@@ -65,17 +65,17 @@ export function BookingPage() {
                   onClick={() => setSelectedBooth(booth.id)}
                   className={`relative p-6 rounded-2xl border-2 transition-all ${
                     selectedBooth === booth.id
-                      ? 'border-purple-500 bg-white/10'
-                      : 'border-white/10 bg-white/5 hover:bg-white/10'
+                      ? 'border-[#D4AF37] bg-[#D4AF37]/10 shadow-[0_0_28px_rgba(212,175,55,0.16)]'
+                      : 'border-[rgba(212,175,55,0.18)] bg-white/5 hover:border-[rgba(245,215,110,0.34)] hover:bg-[rgba(212,175,55,0.07)]'
                   }`}
                 >
                   <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${booth.gradient} flex items-center justify-center mb-4`}>
-                    <booth.icon className="w-8 h-8 text-white" />
+                    <booth.icon className="w-8 h-8 text-black" />
                   </div>
                   <h3 className="text-lg text-white text-left">{booth.title}</h3>
                   {selectedBooth === booth.id && (
                     <div className="absolute top-4 right-4">
-                      <CheckCircle2 className="w-6 h-6 text-purple-400" />
+                      <CheckCircle2 className="w-6 h-6 text-[#D4AF37]" />
                     </div>
                   )}
                 </button>
@@ -89,7 +89,7 @@ export function BookingPage() {
           <div>
             <h2 className="text-3xl text-white mb-8 text-center">Choose Date & Time</h2>
             <div className="max-w-2xl mx-auto">
-              <Card className="bg-white/5 border-white/10 p-8 rounded-2xl mb-6">
+              <Card className="opbe-premium-card p-8 rounded-2xl mb-6">
                 <Label className="text-white mb-4 block">Event Date</Label>
                 <div className="bg-white/10 rounded-xl p-4">
                   <Calendar
@@ -101,7 +101,7 @@ export function BookingPage() {
                 </div>
               </Card>
 
-              <Card className="bg-white/5 border-white/10 p-8 rounded-2xl">
+              <Card className="opbe-premium-card p-8 rounded-2xl">
                 <Label className="text-white mb-4 block">Event Time</Label>
                 <div className="grid grid-cols-2 gap-4">
                   <Select>
@@ -131,8 +131,8 @@ export function BookingPage() {
                 </div>
               </Card>
 
-              <div className="mt-6 p-4 bg-purple-500/10 border border-purple-500/20 rounded-xl flex gap-3">
-                <Lightbulb className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" />
+              <div className="mt-6 p-4 bg-[#D4AF37]/10 border border-[#D4AF37]/20 rounded-xl flex gap-3">
+                <Lightbulb className="w-5 h-5 text-[#F5D76E] flex-shrink-0 mt-0.5" />
                 <p className="text-white/90 text-sm">
                   <strong>Tip:</strong> Sunset sessions are most popular — book early for golden hour events!
                 </p>
@@ -146,7 +146,7 @@ export function BookingPage() {
           <div>
             <h2 className="text-3xl text-white mb-8 text-center">Add Event Location</h2>
             <div className="max-w-2xl mx-auto">
-              <Card className="bg-white/5 border-white/10 p-8 rounded-2xl">
+              <Card className="opbe-premium-card p-8 rounded-2xl">
                 <div className="space-y-6">
                   <div>
                     <Label className="text-white mb-2 block">Venue Name</Label>
@@ -184,7 +184,7 @@ export function BookingPage() {
               </Card>
 
               {/* Map Placeholder */}
-              <Card className="bg-white/5 border-white/10 p-4 rounded-2xl mt-6">
+              <Card className="opbe-premium-card p-4 rounded-2xl mt-6">
                 <div className="h-64 bg-white/10 rounded-xl flex items-center justify-center">
                   <p className="text-white/40">Map preview of Orlando area</p>
                 </div>
@@ -198,15 +198,15 @@ export function BookingPage() {
           <div>
             <h2 className="text-3xl text-white mb-8 text-center">Select Add-Ons</h2>
             <div className="max-w-2xl mx-auto">
-              <Card className="bg-white/5 border-white/10 p-8 rounded-2xl">
+              <Card className="opbe-premium-card p-8 rounded-2xl">
                 <div className="space-y-4">
                   {addOns.map((addon) => (
                     <div
                       key={addon.id}
                       className={`p-4 rounded-xl border-2 transition-all cursor-pointer ${
                         formData.addOns.includes(addon.id)
-                          ? 'border-purple-500 bg-white/10'
-                          : 'border-white/10 bg-white/5 hover:bg-white/10'
+                          ? 'border-[#D4AF37] bg-[#D4AF37]/10 shadow-[0_0_28px_rgba(212,175,55,0.16)]'
+                          : 'border-[rgba(212,175,55,0.18)] bg-white/5 hover:border-[rgba(245,215,110,0.34)] hover:bg-[rgba(212,175,55,0.07)]'
                       }`}
                       onClick={() => handleAddOnToggle(addon.id)}
                     >
@@ -221,7 +221,7 @@ export function BookingPage() {
                             <p className="text-white">{addon.label}</p>
                           </div>
                         </div>
-                        <span className="text-purple-400">{addon.price}</span>
+                        <span className="text-[#D4AF37]">{addon.price}</span>
                       </div>
                     </div>
                   ))}
@@ -236,7 +236,7 @@ export function BookingPage() {
           <div>
             <h2 className="text-3xl text-white mb-8 text-center">Contact & Payment</h2>
             <div className="max-w-2xl mx-auto">
-              <Card className="bg-white/5 border-white/10 p-8 rounded-2xl mb-6">
+              <Card className="opbe-premium-card p-8 rounded-2xl mb-6">
                 <h3 className="text-xl text-white mb-6">Your Information</h3>
                 <div className="space-y-4">
                   <div>
@@ -271,7 +271,7 @@ export function BookingPage() {
                 </div>
               </Card>
 
-              <Card className="bg-white/5 border-white/10 p-8 rounded-2xl">
+              <Card className="opbe-premium-card p-8 rounded-2xl">
                 <h3 className="text-xl text-white mb-6">Booking Summary</h3>
                 <div className="space-y-3 mb-6 pb-6 border-b border-white/10">
                   <div className="flex justify-between text-white/70">
@@ -291,7 +291,7 @@ export function BookingPage() {
                 </div>
                 <div className="flex justify-between text-xl text-white">
                   <span>Estimated Total</span>
-                  <span className="text-purple-400">$1,250</span>
+                  <span className="text-[#D4AF37]">$1,250</span>
                 </div>
                 <p className="text-white/50 text-sm mt-4">
                   * A 50% deposit is required to secure your booking. Final pricing will be confirmed via email.
@@ -303,7 +303,7 @@ export function BookingPage() {
                   // Show success animation
                   setStep(6);
                 }}
-                className="w-full mt-6 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-6 rounded-xl text-lg"
+                className="w-full mt-6 opbe-btn-primary py-6 rounded-xl text-lg"
               >
                 Confirm Booking
               </Button>
@@ -319,15 +319,15 @@ export function BookingPage() {
               animate={{ scale: 1 }}
               transition={{ type: 'spring', duration: 0.6 }}
             >
-              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mx-auto mb-6">
-                <CheckCircle2 className="w-12 h-12 text-white" />
+              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#B8860B] flex items-center justify-center mx-auto mb-6">
+                <CheckCircle2 className="w-12 h-12 text-black" />
               </div>
             </motion.div>
             <h2 className="text-4xl text-white mb-4">Booking Confirmed!</h2>
             <p className="text-xl text-white/70 mb-8">
               Thank you for choosing ORLANDO PHOTO BOOTH EVENTS. We'll send a confirmation email shortly.
             </p>
-            <Card className="bg-white/5 border-white/10 p-8 rounded-2xl text-left">
+            <Card className="opbe-premium-card p-8 rounded-2xl text-left">
               <h3 className="text-xl text-white mb-4">What's Next?</h3>
               <div className="space-y-3 text-white/70">
                 <p>✓ Check your email for booking confirmation</p>
@@ -379,7 +379,7 @@ export function BookingPage() {
             onClick={() => setStep(step - 1)}
             disabled={step === 1}
             variant="outline"
-            className="border-white/20 text-white hover:bg-white/10 disabled:opacity-30"
+            className="opbe-btn-secondary disabled:opacity-30"
           >
             <ChevronLeft className="w-5 h-5 mr-2" />
             Previous
@@ -387,7 +387,7 @@ export function BookingPage() {
           <Button
             onClick={() => setStep(step + 1)}
             disabled={step === 5}
-            className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white"
+            className="opbe-btn-primary"
           >
             Next
             <ChevronRight className="w-5 h-5 ml-2" />

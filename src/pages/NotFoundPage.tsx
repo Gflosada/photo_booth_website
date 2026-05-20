@@ -9,7 +9,7 @@ export default function NotFoundPage() {
       <div className="max-w-3xl mx-auto px-4 text-center">
         <h1 className="text-6xl text-white mb-6">Page not found</h1>
         <p className="text-xl text-white/70 mb-8">Request a quote for your Orlando photo booth event.</p>
-        <Button asChild className="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full px-8 py-6"><Link to="/quote">Get a Free Quote</Link></Button>
+        <Button asChild className="opbe-btn-primary rounded-full px-8 py-6"><Link to="/quote">Get a Free Quote</Link></Button>
       </div>
     </div>
   );

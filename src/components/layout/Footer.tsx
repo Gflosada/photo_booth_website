@@ -18,8 +18,8 @@ export function Footer() {
             </Link>
             <p className="text-white/60 text-sm mb-4">Premium photo booth rentals for Orlando weddings, parties, corporate events, and private celebrations.</p>
             <div className="flex gap-4">
-              <a href="https://instagram.com" aria-label="ORLANDO PHOTO BOOTH EVENTS on Instagram" className="w-10 h-10 rounded-full bg-white/10 hover:bg-purple-500 flex items-center justify-center transition-colors"><Instagram className="w-5 h-5 text-white" /></a>
-              <a href="https://facebook.com" aria-label="ORLANDO PHOTO BOOTH EVENTS on Facebook" className="w-10 h-10 rounded-full bg-white/10 hover:bg-purple-500 flex items-center justify-center transition-colors"><Facebook className="w-5 h-5 text-white" /></a>
+              <a href="https://instagram.com" aria-label="ORLANDO PHOTO BOOTH EVENTS on Instagram" className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#D4AF37] flex items-center justify-center transition-colors"><Instagram className="w-5 h-5 text-white" /></a>
+              <a href="https://facebook.com" aria-label="ORLANDO PHOTO BOOTH EVENTS on Facebook" className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#D4AF37] flex items-center justify-center transition-colors"><Facebook className="w-5 h-5 text-white" /></a>
             </div>
           </div>
 
@@ -31,16 +31,16 @@ export function Footer() {
                 ['Gallery', '/gallery'],
                 ['Get a Quote', '/quote'],
                 ['Contact', '/contact'],
-              ].map(([label, path]) => <Link key={path} to={path} className="block text-white/60 hover:text-purple-400 text-sm transition-colors">{label}</Link>)}
+              ].map(([label, path]) => <Link key={path} to={path} className="block text-white/60 hover:text-[#D4AF37] text-sm transition-colors">{label}</Link>)}
             </div>
           </div>
 
           <div>
             <h2 className="text-white mb-4 text-base">Contact</h2>
             <div className="space-y-3">
-              <div className="flex items-start gap-3"><MapPin className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" /><p className="text-white/60 text-sm">Serving Orlando and Central Florida<br />{serviceAreas.slice(1, 5).join(', ')}</p></div>
-              <a href={`tel:${BUSINESS_PHONE.replace(/[^+\d]/g, '')}`} onClick={trackPhoneClick} className="flex items-center gap-3 text-white/60 hover:text-purple-400 text-sm"><Phone className="w-5 h-5 text-purple-400 flex-shrink-0" />{BUSINESS_PHONE}</a>
-              <a href={`mailto:${BUSINESS_EMAIL}`} onClick={trackEmailClick} className="flex items-center gap-3 text-white/60 hover:text-purple-400 text-sm"><Mail className="w-5 h-5 text-purple-400 flex-shrink-0" />{BUSINESS_EMAIL}</a>
+              <div className="flex items-start gap-3"><MapPin className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-0.5" /><p className="text-white/60 text-sm">Serving Orlando and Central Florida<br />{serviceAreas.slice(1, 5).join(', ')}</p></div>
+              <a href={`tel:${BUSINESS_PHONE.replace(/[^+\d]/g, '')}`} onClick={trackPhoneClick} className="flex items-center gap-3 text-white/60 hover:text-[#D4AF37] text-sm"><Phone className="w-5 h-5 text-[#D4AF37] flex-shrink-0" />{BUSINESS_PHONE}</a>
+              <a href={`mailto:${BUSINESS_EMAIL}`} onClick={trackEmailClick} className="flex items-center gap-3 text-white/60 hover:text-[#D4AF37] text-sm"><Mail className="w-5 h-5 text-[#D4AF37] flex-shrink-0" />{BUSINESS_EMAIL}</a>
             </div>
           </div>
         </div>

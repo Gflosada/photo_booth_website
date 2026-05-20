@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { CheckCircle2 } from 'lucide-react';
@@ -27,11 +27,105 @@ const defaultValues: LeadFormValues = {
   message: '',
 };
 
+const QUICK_BOOKING_STORAGE_KEY = 'opbeQuickBooking';
+
+type QuickBookingDetails = {
+  eventDate?: string;
+  eventType?: string;
+  guestCount?: string;
+};
+
+const eventTypeLabels: Record<string, string> = {
+  wedding: 'Wedding',
+  birthday: 'Birthday',
+  corporate: 'Corporate event',
+  quinceanera: 'Quinceanera',
+  graduation: 'Graduation',
+  other: 'Other',
+};
+
+function readQuickBookingDetails(): QuickBookingDetails {
+  if (typeof window === 'undefined') return {};
+
+  try {
+    const saved = window.localStorage.getItem(QUICK_BOOKING_STORAGE_KEY);
+    if (!saved) return {};
+
+    const parsed = JSON.parse(saved) as QuickBookingDetails;
+
+    return {
+      eventDate: parsed.eventDate || '',
+      eventType: parsed.eventType || '',
+      guestCount: parsed.guestCount || '',
+    };
+  } catch {
+    return {};
+  }
+}
+
+function formatQuickBookingDate(value?: string) {
+  if (!value) return 'Not selected';
+
+  const date = new Date(`${value}T00:00:00`);
+  if (Number.isNaN(date.getTime())) return value;
+
+  return date.toLocaleDateString(undefined, {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
+}
+
+function formatGuestCount(value?: string) {
+  if (!value) return 'Not selected';
+
+  if (value === '50') return 'Up to 50 guests';
+  if (value === '100') return '50-100 guests';
+  if (value === '200') return '100-200 guests';
+  if (Number(value) >= 250) return '200+ guests';
+
+  return `${value} guests`;
+}
+
 export function QuoteForm({ formName = 'quote' }: { formName?: string }) {
+  const [quickBookingDetails] = useState(() => (
+    formName === 'booking' ? readQuickBookingDetails() : {}
+  ));
   const [result, setResult] = useState<{ ok: boolean; message: string; demoMode?: boolean } | null>(null);
-  const { register, handleSubmit, formState: { errors, isSubmitting }, setValue, watch } = useForm<any>({ resolver: zodResolver(leadSchema), defaultValues });
+  const { register, handleSubmit, formState: { errors, isSubmitting }, setValue, watch } = useForm<any>({
+    resolver: zodResolver(leadSchema),
+    defaultValues: {
+      ...defaultValues,
+      eventDate: quickBookingDetails.eventDate || defaultValues.eventDate,
+      eventType: quickBookingDetails.eventType || defaultValues.eventType,
+      guestCount: quickBookingDetails.guestCount
+        ? Number(quickBookingDetails.guestCount)
+        : defaultValues.guestCount,
+    },
+  });
   const packageSelection = watch('packageSelection');
+  const hasQuickBookingDetails = Boolean(
+    quickBookingDetails.eventDate || quickBookingDetails.eventType || quickBookingDetails.guestCount,
+  );
   const errorMessage = (name: string) => String(errors[name]?.message || '');
+
+  useEffect(() => {
+    if (formName !== 'booking') return;
+
+    const savedDetails = readQuickBookingDetails();
+
+    if (savedDetails.eventDate) {
+      setValue('eventDate', savedDetails.eventDate, { shouldDirty: false, shouldValidate: false });
+    }
+
+    if (savedDetails.eventType) {
+      setValue('eventType', savedDetails.eventType, { shouldDirty: false, shouldValidate: false });
+    }
+
+    if (savedDetails.guestCount) {
+      setValue('guestCount', Number(savedDetails.guestCount), { shouldDirty: false, shouldValidate: false });
+    }
+  }, [formName, setValue]);
 
   async function onSubmit(values: LeadFormValues) {
     const response = await submitQuote(values as LeadFormValues);
@@ -39,19 +133,45 @@ export function QuoteForm({ formName = 'quote' }: { formName?: string }) {
     if (response.ok) trackFormSubmit(formName);
   }
 
-  const errorClass = 'mt-1 text-sm text-pink-300';
+  const errorClass = 'mt-1 text-sm text-[#F7E7B4]';
 
   return (
-    <Card className="bg-white/10 backdrop-blur-xl border border-white/15 p-6 md:p-8 rounded-3xl shadow-2xl">
+    <Card className="opbe-premium-card p-6 md:p-8 rounded-3xl backdrop-blur-xl">
       {result?.ok ? (
         <div className="text-center py-8">
-          <CheckCircle2 className="w-14 h-14 text-green-400 mx-auto mb-4" />
+          <CheckCircle2 className="w-14 h-14 text-[#F5D76E] mx-auto mb-4 drop-shadow-[0_0_18px_rgba(245,215,110,0.28)]" />
           <h2 className="text-2xl text-white mb-3">Quote request ready</h2>
           <p className="text-white/70 max-w-xl mx-auto">{result.message}</p>
           {result.demoMode && <p className="text-yellow-200/80 text-sm mt-4">Production note: connect Supabase env variables to store leads automatically.</p>}
         </div>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)} onFocus={() => trackFormStart(formName)} className="space-y-6" noValidate>
+          {hasQuickBookingDetails && (
+            <div className="rounded-2xl border border-[#D4AF37]/25 bg-[#D4AF37]/10 p-4 sm:p-5">
+              <p className="mb-3 text-sm uppercase tracking-[0.18em] text-[#F7E7B4]/80">
+                Selected from Quick Booking
+              </p>
+              <div className="grid gap-3 text-sm sm:grid-cols-3">
+                <div>
+                  <p className="text-white/50">Event date</p>
+                  <p className="mt-1 text-white">{formatQuickBookingDate(quickBookingDetails.eventDate)}</p>
+                </div>
+                <div>
+                  <p className="text-white/50">Event type</p>
+                  <p className="mt-1 text-white">
+                    {quickBookingDetails.eventType
+                      ? eventTypeLabels[quickBookingDetails.eventType] || quickBookingDetails.eventType
+                      : 'Not selected'}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-white/50">Guest count</p>
+                  <p className="mt-1 text-white">{formatGuestCount(quickBookingDetails.guestCount)}</p>
+                </div>
+              </div>
+            </div>
+          )}
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
               <Label htmlFor="fullName" className="text-white">Full name</Label>
@@ -113,7 +233,7 @@ export function QuoteForm({ formName = 'quote' }: { formName?: string }) {
             <Label className="text-white">Package interest</Label>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-2">
               {packages.map((pkg) => (
-                <button key={pkg.id} type="button" onClick={() => setValue('packageSelection', pkg.id, { shouldValidate: true })} className={`rounded-2xl border p-4 text-left transition ${packageSelection === pkg.id ? 'border-purple-400 bg-purple-500/20' : 'border-white/10 bg-white/5 hover:bg-white/10'}`}>
+                <button key={pkg.id} type="button" onClick={() => setValue('packageSelection', pkg.id, { shouldValidate: true })} className={`rounded-2xl border p-4 text-left transition ${packageSelection === pkg.id ? 'border-[#D4AF37] bg-[#D4AF37]/15 shadow-[0_0_24px_rgba(212,175,55,0.14)]' : 'border-[rgba(212,175,55,0.18)] bg-white/5 hover:border-[rgba(245,215,110,0.34)] hover:bg-[rgba(212,175,55,0.07)]'}`}>
                   <span className="block text-white text-sm">{pkg.name}</span>
                   <span className="text-white/50 text-xs">{pkg.duration}</span>
                 </button>
@@ -128,9 +248,9 @@ export function QuoteForm({ formName = 'quote' }: { formName?: string }) {
             {errors.message && <p className={errorClass}>{errorMessage('message')}</p>}
           </div>
 
-          {result && !result.ok && <p className="text-pink-300 text-sm">{result.message}</p>}
+          {result && !result.ok && <p className="text-[#F5D76E] text-sm">{result.message}</p>}
 
-          <Button disabled={isSubmitting} className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-6 rounded-xl text-lg">
+          <Button disabled={isSubmitting} className="w-full opbe-btn-primary py-6 text-lg">
             {isSubmitting ? 'Sending request...' : 'Request My Free Quote'}
           </Button>
         </form>

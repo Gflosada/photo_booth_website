@@ -8,7 +8,7 @@ export default function BookingPage() {
       <SEO title="Book Your Orlando Photo Booth | ORLANDO PHOTO BOOTH EVENTS" description="Start your Orlando photo booth booking request with ORLANDO PHOTO BOOTH EVENTS. Choose your event date, package interest, venue, and guest count." path="/booking" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-6xl text-white mb-6">Book Your <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Orlando Booth</span></h1>
+          <h1 className="text-5xl md:text-6xl text-white mb-6">Book Your <span className="opbe-gold-text">Orlando Booth</span></h1>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">Tell us about your event and we will confirm availability, package fit, and next steps for your ORLANDO PHOTO BOOTH EVENTS experience.</p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-8 items-start">
